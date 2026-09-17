@@ -3,10 +3,10 @@ using System.Globalization;
 using OpenCvSharp;
 using OpenCvSharp.Extensions; 
 using OpenCvSharp.Dnn;
-using OpenCvSharp.Tracking
-using OpenCvSharp.Internal
-using OpenCvSharp.Face
-using OpenCvSharp.Aruco
+using OpenCvSharp.Tracking;
+using OpenCvSharp.Internal;
+using OpenCvSharp.Face;
+using OpenCvSharp.Aruco;
 
 namespace API_Docs
 {
@@ -38,14 +38,14 @@ namespace API_Docs
 
                         if (frame.Empty())
                         {
-                            Console.WriteLine("Blank frame grabbed, skipping.");
+                            Console.WriteLine("Blank frame grabbed.");
                             continue;
                         }
 
                         //grayscale
-                        using (Mat gray = new Mat())
-                        using (Mat blurred = new Mat())
-                        using (Mat edges = new Mat())
+                        using (Mat gray = new Mat());
+                        using (Mat blurred = new Mat());
+                        using (Mat edges = new Mat());
                         {
                             Cv2.CvtColor(frame, gray, ColorConversionCodes.BGR2GRAY);
                             Cv2.GaussianBlur(gray, blurred, new Size(5, 5), 0);
